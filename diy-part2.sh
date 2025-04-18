@@ -11,10 +11,20 @@
 #
 
 # Modify default IP
-#sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/192.168.123.1/g' package/base-files/files/bin/config_generate
+
+# 修改时区
+sed -i 's/UTC/CST-8/' package/base-files/files/bin/config_generate
+
+#  修改默认语言
+sed -i 's/option lang auto/option lang zh_cn/' feeds/luci/modules/luci-base/root/etc/config/luci
 
 # Modify default theme
-#sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
+sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
+
+# 新增默认目录
+mkdir -p openwrt/files/opt
+touch openwrt/files/opt/.keep
 
 # Modify hostname
-#sed -i 's/OpenWrt/P3TERX-Router/g' package/base-files/files/bin/config_generate
+#sed -i 's/ImmortalWrt/P3TERX-Router/g' package/base-files/files/bin/config_generate

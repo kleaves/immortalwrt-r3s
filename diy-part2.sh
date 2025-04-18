@@ -25,5 +25,7 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/M
 # 新增opt目录
 mkdir package/base-files/files/opt
 
+cp $GITHUB_WORKSPACE/3rd/package/system/fstools/Makefile package/system/fstools
+
 # Modify hostname
 #sed -i 's/ImmortalWrt/P3TERX-Router/g' package/base-files/files/bin/config_generate

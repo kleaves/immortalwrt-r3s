@@ -22,9 +22,8 @@ sed -i 's/option lang auto/option lang zh_cn/' feeds/luci/modules/luci-base/root
 # Modify default theme
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
 
-# 新增默认目录
-mkdir -p openwrt/files/opt
-touch openwrt/files/opt/.keep
+# 新增opt目录
+mkdir package/base-files/files/opt
 
 # Modify hostname
 #sed -i 's/ImmortalWrt/P3TERX-Router/g' package/base-files/files/bin/config_generate

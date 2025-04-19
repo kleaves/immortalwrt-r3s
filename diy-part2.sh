@@ -33,6 +33,8 @@ cp $GITHUB_WORKSPACE/3rd/etc/uci-defaults/70-rootpt-resize package/base-files/fi
 
 # 新增AdGuardHome配置文件
 cp -r $GITHUB_WORKSPACE/3rd/opt/AdGuardHome package/base-files/files/opt/
+wget `curl -s https://api.github.com/repos/AdguardTeam/AdGuardHome/releases/latest | grep browser_download_url | cut -d'"' -f4 |grep linux_arm64` -O /tmp/AdGuardHome_linux_arm64.tar.gz
+tar -zxvf /tmp/AdGuardHome_linux_arm64.tar.gz -C package/base-files/files/opt
 
 # Modify hostname
-#sed -i 's/ImmortalWrt/P3TERX-Router/g' package/base-files/files/bin/config_generate
+sed -i 's/ImmortalWrt/R3S/g' package/base-files/files/bin/config_generate

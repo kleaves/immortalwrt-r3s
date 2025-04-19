@@ -32,7 +32,7 @@ cp $GITHUB_WORKSPACE/3rd/package/system/fstools/Makefile package/system/fstools
 cp $GITHUB_WORKSPACE/3rd/etc/uci-defaults/70-rootpt-resize package/base-files/files/etc/uci-defaults
 
 # 新增AdGuardHome配置文件
-cp -r $GITHUB_WORKSPACE/3rd/opt/AdguardHome package/base-files/files/opt/
+cp -r $GITHUB_WORKSPACE/3rd/opt/AdGuardHome package/base-files/files/opt/
 
 # Modify hostname
 #sed -i 's/ImmortalWrt/P3TERX-Router/g' package/base-files/files/bin/config_generate

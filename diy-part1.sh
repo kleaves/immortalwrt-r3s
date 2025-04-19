@@ -18,3 +18,4 @@
 # echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
 # echo 'src-git adguardhome https://github.com/kleaves/luci-app-adguardhome.git' >> feeds.conf.default
 git clone https://github.com/kleaves/luci-app-adguardhome package/adguardhome
+git clone https://github.com/sirpdboy/luci-app-poweroffdevice package/luci-app-poweroffdevice

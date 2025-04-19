@@ -28,6 +28,9 @@ mkdir package/base-files/files/opt
 # 修改Makefile文件，强制overlay格式化为ext4，使用openwrt官方脚本进行扩容
 cp $GITHUB_WORKSPACE/3rd/package/system/fstools/Makefile package/system/fstools
 
+# 新增openwrt官方扩容脚本
+cp $GITHUB_WORKSPACE/3rd/etc/uci-defaults/70-rootpt-resize package/base-files/files/etc/uci-defaults
+
 # 新增AdGuardHome配置文件
 cp -r $GITHUB_WORKSPACE/3rd/opt/AdguardHome package/base-files/files/opt/
 

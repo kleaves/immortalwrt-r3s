@@ -4,10 +4,10 @@ http:
     enabled: false
   address: 0.0.0.0:3000
   session_ttl: 720h
-# 默认密码为空
+# 默认密码为00000000
 users:
   - name: adguard
-    password: $2a$05$9Y5PYjJOi5QybsAuAqGhRuRAsBDBGd3JxVUnewVRK1YQrgWr380a.
+    password: $2a$05$aUkuLsMG6fGeqJXuf4OFi.b0wL.DTh2jVfZBJ0lyJtpO9hTbR0x86
 auth_attempts: 5
 block_auth_min: 15
 http_proxy: ""

@@ -25,7 +25,11 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/M
 # 新增opt目录
 mkdir package/base-files/files/opt
 
+# 修改Makefile文件，强制overlay格式化为ext4，使用openwrt官方脚本进行扩容
 cp $GITHUB_WORKSPACE/3rd/package/system/fstools/Makefile package/system/fstools
+
+# 新增AdGuardHome配置文件
+cp -r $GITHUB_WORKSPACE/3rd/opt/AdguardHome package/base-files/files/opt/
 
 # Modify hostname
 #sed -i 's/ImmortalWrt/P3TERX-Router/g' package/base-files/files/bin/config_generate

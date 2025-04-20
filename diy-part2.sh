@@ -29,7 +29,8 @@ mkdir package/base-files/files/opt
 cp $GITHUB_WORKSPACE/3rd/package/system/fstools/Makefile package/system/fstools
 
 # 新增openwrt官方扩容脚本
-cp $GITHUB_WORKSPACE/3rd/etc/uci-defaults/70-rootpt-resize package/base-files/files/etc/uci-defaults
+cp $GITHUB_WORKSPACE/3rd/etc/uci-defaults/80-rootfs-resize package/base-files/files/etc/uci-defaults
+echo "/etc/uci-defaults/80-rootfs-resize" >> package/base-files/files/etc/sysupgrade.conf
 
 # 新增AdGuardHome配置文件
 cp -r $GITHUB_WORKSPACE/3rd/opt/AdGuardHome package/base-files/files/opt/

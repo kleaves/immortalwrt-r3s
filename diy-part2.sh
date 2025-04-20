@@ -28,10 +28,6 @@ mkdir package/base-files/files/opt
 # 修改Makefile文件，强制overlay格式化为ext4，使用openwrt官方脚本进行扩容
 cp $GITHUB_WORKSPACE/3rd/package/system/fstools/Makefile package/system/fstools
 
-# 新增openwrt官方扩容脚本
-cp $GITHUB_WORKSPACE/3rd/etc/uci-defaults/80-rootfs-resize package/base-files/files/etc/uci-defaults
-echo "/etc/uci-defaults/80-rootfs-resize" >> package/base-files/files/etc/sysupgrade.conf
-
 # 新增AdGuardHome配置文件
 cp -r $GITHUB_WORKSPACE/3rd/opt/AdGuardHome package/base-files/files/opt/
 wget `curl -s https://api.github.com/repos/AdguardTeam/AdGuardHome/releases/latest | grep browser_download_url | cut -d'"' -f4 |grep linux_arm64` -O /tmp/AdGuardHome_linux_arm64.tar.gz

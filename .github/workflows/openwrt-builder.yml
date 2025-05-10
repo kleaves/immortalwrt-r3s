@@ -75,14 +75,13 @@ jobs:
     - name: 获取最新 Release Tag via API
       id: get_latest_api
       run: |
-        echo "$(wget --no-check-certificate -qO- https://api.github.com/repos/immortalwrt/immortalwrt/tags | grep 'name' | cut -d\" -f4 | head -1)" > $REPO_TAG
+        echo "$(wget --no-check-certificate -qO- https://api.github.com/repos/immortalwrt/immortalwrt/tags | grep 'name' | cut -d\" -f4 | head -1)" > $REPO_BRANCH
 
     - name: Clone source code
       working-directory: /workdir
       run: |
         df -hT $PWD        
-        #git clone $REPO_URL -b $REPO_BRANCH openwrt
-        git clone $REPO_URL -b $REPO_TAG openwrt
+        git clone $REPO_URL -b $REPO_BRANCH openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
         
     # 新增CCache配置步骤

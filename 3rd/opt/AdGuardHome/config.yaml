@@ -2,12 +2,11 @@ http:
   pprof:
     port: 6060
     enabled: false
-  address: 0.0.0.0:3000
+  address: 0.0.0.0:59634
   session_ttl: 720h
-# 默认密码为00000000
 users:
-  - name: adguard
-    password: $2a$05$aUkuLsMG6fGeqJXuf4OFi.b0wL.DTh2jVfZBJ0lyJtpO9hTbR0x86
+  - name: Unabashed2152
+    password: $2y$10$4bArTgsuwZ0v5TObTBBHmegbU7otmrudTEiWdhYiOm5fuc5qyXVJ6
 auth_attempts: 5
 block_auth_min: 15
 http_proxy: ""
@@ -25,15 +24,15 @@ dns:
   refuse_any: false
   upstream_dns:
     - https://dns.alidns.com/dns-query
+    - https://1.12.12.12/dns-query
+    - https://120.53.53.53/dns-query
+    - 202.106.195.68
+    - 119.29.29.29
     - https://223.5.5.5/dns-query
     - https://223.6.6.6/dns-query
     - 202.106.46.151
     - 202.106.0.20
     - https://doh.pub/dns-query
-    - https://1.12.12.12/dns-query
-    - https://120.53.53.53/dns-query
-    - 202.106.195.68
-    - 119.29.29.29
   upstream_dns_file: ""
   bootstrap_dns:
     - 119.29.29.29
@@ -50,6 +49,7 @@ dns:
   trusted_proxies:
     - 127.0.0.0/8
     - ::1/128
+  cache_enabled: true
   cache_size: 4194304
   cache_ttl_min: 0
   cache_ttl_max: 0
@@ -70,6 +70,7 @@ dns:
   private_networks: []
   use_private_ptr_resolvers: false
   local_ptr_upstreams:
+    - 223.5.5.5
     - 202.106.46.151
     - 223.5.5.5
   use_dns64: false
@@ -78,6 +79,8 @@ dns:
   use_http3_upstreams: false
   serve_plain_dns: true
   hostsfile_enabled: true
+  pending_requests:
+    enabled: true
 tls:
   enabled: false
   server_name: ""
@@ -155,7 +158,7 @@ user_rules:
   - '||tsearch.toutiaoapi.comundefined^$important'
   - '||feedback-c.zijieapi.com^$important'
   - '||tnc3-bjlgy.zijieapi.com^$important'
-  - ""
+  - 192.168.123.88 sdfjifdg.eastzz.top
 dhcp:
   enabled: false
   interface_name: ""
@@ -193,7 +196,10 @@ filtering:
   blocking_mode: default
   parental_block_host: family-block.dns.adguard.com
   safebrowsing_block_host: standard-block.dns.adguard.com
-  rewrites: []
+  rewrites:
+    - domain: sdfjifdg.eastzz.top
+      answer: 192.168.123.88
+      enabled: true
   safe_fs_patterns:
     - /etc/AdGuardHome/data/userfilters/*
   safebrowsing_cache_size: 1048576
@@ -203,6 +209,7 @@ filtering:
   filters_update_interval: 24
   blocked_response_ttl: 10
   filtering_enabled: true
+  rewrites_enabled: true
   parental_enabled: false
   safebrowsing_enabled: false
   protection_enabled: true
@@ -227,4 +234,4 @@ os:
   group: ""
   user: ""
   rlimit_nofile: 0
-schema_version: 29
+schema_version: 31

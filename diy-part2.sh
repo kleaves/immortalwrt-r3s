@@ -11,7 +11,7 @@
 #
 
 # Modify default IP
-sed -i 's/192.168.1.1/192.168.123.1/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/192.168.123.222/g' package/base-files/files/bin/config_generate
 
 # 修改时区
 sed -i 's/UTC/CST-8/' package/base-files/files/bin/config_generate
@@ -35,4 +35,4 @@ wget `curl -s https://api.github.com/repos/AdguardTeam/AdGuardHome/releases/late
 tar -zxvf /tmp/AdGuardHome_linux_arm64.tar.gz -C package/base-files/files/opt
 
 # Modify hostname
-sed -i 's/ImmortalWrt/R3S/g' package/base-files/files/bin/config_generate
+sed -i 's/ImmortalWrt/r3s/g' package/base-files/files/bin/config_generate
